@@ -6,7 +6,7 @@ import java.util.Comparator;
 
 import edu.princeton.cs.algs4.MinPQ;
 
-public final class Solver {
+public class Solver {
     private int moves;
     private ArrayList<WorldState> solution = new ArrayList<>();
 
