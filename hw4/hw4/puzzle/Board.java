@@ -68,7 +68,6 @@ public class Board implements WorldState {
         return neighbors;
     }
 
-
     public int hamming() {
         int inversions = 0;
         for (int i = 0; i < size(); i++) {
@@ -104,6 +103,12 @@ public class Board implements WorldState {
     }
 
     public boolean equals(Object y) {
+        if (y == null) {
+            return false;
+        }
+        if (y.getClass() != this.getClass()) {
+            return false;
+        }
         Board other = (Board) y;
         if (other.size() != this.size()) {
             return false;
@@ -118,6 +123,11 @@ public class Board implements WorldState {
         return true;
     }
 
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+    
     /** 
      * Returns the string representation of the board. 
      */
@@ -127,7 +137,7 @@ public class Board implements WorldState {
         s.append(N + "\n");
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
-                s.append(String.format("%2d ", tileAt(i,j)));
+                s.append(String.format("%2d ", tileAt(i, j)));
             }
             s.append("\n");
         }

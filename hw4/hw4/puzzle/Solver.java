@@ -7,8 +7,8 @@ import java.util.Comparator;
 import edu.princeton.cs.algs4.MinPQ;
 
 public final class Solver {
-    int moves;
-    ArrayList<WorldState> solution = new ArrayList<>();
+    private int moves;
+    private ArrayList<WorldState> solution = new ArrayList<>();
 
     private class SearchNode {
         WorldState state;
@@ -28,7 +28,7 @@ public final class Solver {
         }
     }
 
-    public class SearchNodeComparator implements Comparator<SearchNode> {
+    private class SearchNodeComparator implements Comparator<SearchNode> {
         @Override
         public int compare(SearchNode node1, SearchNode node2) {
             return node1.priority() - node2.priority();
